@@ -11,7 +11,7 @@
           'pb-3 text-sm font-medium transition-colors',
           currentStatus === status.value
             ? 'border-b-2 border-primary text-primary'
-            : 'text-gray-600 hover:text-primary'
+            : 'text-gray-600 hover:text-primary',
         ]"
         @click="currentStatus = status.value"
       >
@@ -39,10 +39,7 @@
             <span class="text-sm text-gray-600">{{ formatDate(order.createdAt) }}</span>
           </div>
           <span
-            :class="[
-              'rounded-full px-3 py-1 text-xs font-semibold',
-              getStatusClass(order.status)
-            ]"
+            :class="['rounded-full px-3 py-1 text-xs font-semibold', getStatusClass(order.status)]"
           >
             {{ getStatusText(order.status) }}
           </span>
@@ -50,16 +47,8 @@
 
         <!-- 订单商品 -->
         <div class="mb-4 space-y-3">
-          <div
-            v-for="item in order.items"
-            :key="item.id"
-            class="flex gap-4"
-          >
-            <img
-              :src="item.image"
-              :alt="item.name"
-              class="h-20 w-20 rounded-lg object-cover"
-            />
+          <div v-for="item in order.items" :key="item.id" class="flex gap-4">
+            <img :src="item.image" :alt="item.name" class="h-20 w-20 rounded-lg object-cover" />
             <div class="flex-1">
               <h4 class="font-semibold text-gray-900">{{ item.name }}</h4>
               <p v-if="item.specs" class="text-sm text-gray-500">
@@ -78,12 +67,8 @@
         <!-- 订单金额 -->
         <div class="mb-4 flex justify-end">
           <div class="text-right">
-            <p class="text-sm text-gray-600">
-              共 {{ order.items.length }} 件商品
-            </p>
-            <p class="text-lg font-bold text-primary">
-              实付：¥{{ order.payAmount.toFixed(2) }}
-            </p>
+            <p class="text-sm text-gray-600">共 {{ order.items.length }} 件商品</p>
+            <p class="text-lg font-bold text-primary">实付：¥{{ order.payAmount.toFixed(2) }}</p>
           </div>
         </div>
 
@@ -110,15 +95,10 @@
           >
             确认收货
           </button>
-          <button
-            v-if="order.status === 'completed'"
-            class="btn btn-secondary btn-sm"
-          >
+          <button v-if="order.status === 'completed'" class="btn btn-secondary btn-sm">
             再次购买
           </button>
-          <button class="btn btn-secondary btn-sm">
-            查看详情
-          </button>
+          <button class="btn btn-secondary btn-sm">查看详情</button>
         </div>
       </div>
     </div>
@@ -162,10 +142,16 @@ const orders = ref<Order[]>([
     shippingFee: 0,
     payAmount: 398,
     address: {
+      id: 1,
+      userId: 1,
+      name: '张三',
+      phone: '13800000000',
       province: '北京市',
       city: '北京市',
       district: '朝阳区',
       detail: '某某街道',
+      isDefault: true,
+      createdAt: new Date().toISOString(),
     },
     createdAt: new Date().toISOString(),
   },

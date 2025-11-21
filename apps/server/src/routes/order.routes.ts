@@ -1,18 +1,18 @@
-import { Router } from 'express'
+import { Router, type Router as RouterType } from 'express'
 import {
-    createOrder,
-    getOrders,
-    getOrderById,
-    cancelOrder,
-    confirmOrder,
-    refundOrder,
-    getAllOrders,
-    updateOrderStatus,
+  createOrder,
+  getOrders,
+  getOrderById,
+  cancelOrder,
+  confirmOrder,
+  refundOrder,
+  getAllOrders,
+  updateOrderStatus,
 } from '../controllers/order.controller.js'
 import { authenticate, authorize } from '../middleware/auth.js'
 import { validate, createOrderSchema } from '../utils/validator.js'
 
-const router = Router()
+const router: RouterType = Router()
 
 // 用户订单路由
 router.post('/', authenticate, validate(createOrderSchema), createOrder)

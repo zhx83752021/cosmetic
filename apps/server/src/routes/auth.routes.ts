@@ -1,16 +1,16 @@
-import { Router } from 'express'
+import { Router, type Router as RouterType } from 'express'
 import {
-    register,
-    login,
-    refreshToken,
-    getCurrentUser,
-    updateProfile,
-    changePassword,
+  register,
+  login,
+  refreshToken,
+  getCurrentUser,
+  updateProfile,
+  changePassword,
 } from '../controllers/auth.controller.js'
 import { authenticate } from '../middleware/auth.js'
 import { validate, registerSchema, loginSchema } from '../utils/validator.js'
 
-const router = Router()
+const router: RouterType = Router()
 
 // 公开路由
 router.post('/register', validate(registerSchema), register)

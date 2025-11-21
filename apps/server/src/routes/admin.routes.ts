@@ -1,20 +1,20 @@
-import { Router } from 'express'
+import { Router, type Router as RouterType } from 'express'
 import {
-    getDashboardStats,
-    getUsers,
-    updateUserStatus,
-    getReviews,
-    updateReviewStatus,
-    getCoupons,
-    createCoupon,
-    updateCoupon,
-    deleteCoupon,
-    getSalesStats,
+  getDashboardStats,
+  getUsers,
+  updateUserStatus,
+  getReviews,
+  updateReviewStatus,
+  getCoupons,
+  createCoupon,
+  updateCoupon,
+  deleteCoupon,
+  getSalesStats,
 } from '../controllers/admin.controller.js'
 import { authenticate, authorize } from '../middleware/auth.js'
 import { validate, couponSchema } from '../utils/validator.js'
 
-const router = Router()
+const router: RouterType = Router()
 
 // 所有路由都需要管理员权限
 router.use(authenticate, authorize('admin'))

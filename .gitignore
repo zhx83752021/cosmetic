@@ -48,6 +48,8 @@ coverage
 *.tmp
 *.temp
 .cache
+.turbo
+*.tsbuildinfo
 
 # Database
 *.db

@@ -1,23 +1,23 @@
-import { Router } from 'express'
+import { Router, type Router as RouterType } from 'express'
 import {
-    getAddresses,
-    getAddressById,
-    createAddress,
-    updateAddress,
-    deleteAddress,
-    getUserCoupons,
-    claimCoupon,
-    getAvailableCoupons,
-    getFavorites,
-    addFavorite,
-    removeFavorite,
-    checkFavorite,
-    getPointsHistory,
+  getAddresses,
+  getAddressById,
+  createAddress,
+  updateAddress,
+  deleteAddress,
+  getUserCoupons,
+  claimCoupon,
+  getAvailableCoupons,
+  getFavorites,
+  addFavorite,
+  removeFavorite,
+  checkFavorite,
+  getPointsHistory,
 } from '../controllers/user.controller.js'
 import { authenticate } from '../middleware/auth.js'
 import { validate, addressSchema } from '../utils/validator.js'
 
-const router = Router()
+const router: RouterType = Router()
 
 // 地址管理
 router.get('/addresses', authenticate, getAddresses)

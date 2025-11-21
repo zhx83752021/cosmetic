@@ -8,7 +8,6 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:vue/vue3-recommended',
         'prettier'
     ],
     parser: 'vue-eslint-parser',
@@ -20,7 +19,15 @@ module.exports = {
     plugins: ['@typescript-eslint', 'vue'],
     rules: {
         'vue/multi-word-component-names': 'off',
-        '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+        'vue/no-v-model-argument': 'off',
+        '@typescript-eslint/no-unused-vars': [
+            'error',
+            {
+                argsIgnorePattern: '^_',
+                varsIgnorePattern: '^_',
+                caughtErrorsIgnorePattern: '^_',
+            },
+        ],
         '@typescript-eslint/no-explicit-any': 'warn',
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'

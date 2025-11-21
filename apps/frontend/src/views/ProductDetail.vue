@@ -9,11 +9,7 @@
           <div>
             <!-- 主图 -->
             <div class="mb-4 overflow-hidden rounded-card">
-              <img
-                :src="currentImage"
-                :alt="product.name"
-                class="h-[600px] w-full object-cover"
-              />
+              <img :src="currentImage" :alt="product.name" class="h-[600px] w-full object-cover" />
             </div>
             <!-- 缩略图 -->
             <div class="grid grid-cols-4 gap-4">
@@ -22,7 +18,7 @@
                 :key="index"
                 :class="[
                   'cursor-pointer overflow-hidden rounded-lg border-2 transition-colors',
-                  currentImage === image ? 'border-primary' : 'border-transparent'
+                  currentImage === image ? 'border-primary' : 'border-transparent',
                 ]"
                 @click="currentImage = image"
               >
@@ -54,7 +50,7 @@
             </div>
 
             <h1 class="mb-2 text-3xl font-bold text-gray-900">{{ product.name }}</h1>
-            <p class="mb-4 text-lg text-gray-600">{{ product.subtitle }}</p>
+            <p class="mb-4 text-lg text-gray-600">{{ product.subTitle }}</p>
 
             <!-- 评分 -->
             <div class="mb-6 flex items-center gap-4">
@@ -70,10 +66,7 @@
             <div class="mb-8 rounded-lg bg-neutral-gray p-6">
               <div class="flex items-baseline gap-4">
                 <span class="text-4xl font-bold text-primary">¥{{ product.price }}</span>
-                <span
-                  v-if="product.originalPrice"
-                  class="text-xl text-gray-400 line-through"
-                >
+                <span v-if="product.originalPrice" class="text-xl text-gray-400 line-through">
                   ¥{{ product.originalPrice }}
                 </span>
               </div>
@@ -91,7 +84,7 @@
                     'rounded-lg border-2 px-4 py-2 transition-colors',
                     selectedSku?.id === sku.id
                       ? 'border-primary bg-primary/10'
-                      : 'border-gray-300 hover:border-primary'
+                      : 'border-gray-300 hover:border-primary',
                   ]"
                   @click="selectedSku = sku"
                 >
@@ -131,12 +124,8 @@
 
             <!-- 操作按钮 -->
             <div class="flex gap-4">
-              <button class="btn btn-primary flex-1 btn-lg" @click="addToCart">
-                加入购物车
-              </button>
-              <button class="btn btn-secondary btn-lg" @click="buyNow">
-                立即购买
-              </button>
+              <button class="btn btn-primary flex-1 btn-lg" @click="addToCart">加入购物车</button>
+              <button class="btn btn-secondary btn-lg" @click="buyNow">立即购买</button>
             </div>
           </div>
         </div>
@@ -152,7 +141,7 @@
                   'pb-4 text-lg font-semibold transition-colors',
                   activeTab === tab.value
                     ? 'border-b-2 border-primary text-primary'
-                    : 'text-gray-600 hover:text-primary'
+                    : 'text-gray-600 hover:text-primary',
                 ]"
                 @click="activeTab = tab.value"
               >
