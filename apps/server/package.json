@@ -10,7 +10,7 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc && prisma generate",
     "start": "node dist/index.js",
-    "vercel-build": "prisma migrate deploy && prisma generate && tsc",
+    "vercel-build": "echo 'Starting Vercel build...' && prisma generate && echo 'Prisma generated' && npx tsc --version && echo 'Running TypeScript compiler...' && npx tsc && echo 'Build complete' && ls -la dist/ || echo 'dist folder not found!'",
     "lint": "eslint . --ext .ts --fix --ignore-path ../../.gitignore",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
