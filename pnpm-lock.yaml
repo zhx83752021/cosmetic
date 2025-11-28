@@ -48,107 +48,6 @@ importers:
         specifier: ^5.3.3
         version: 5.9.3
 
-  apps/admin:
-    dependencies:
-      '@element-plus/icons-vue':
-        specifier: ^2.3.1
-        version: 2.3.2(vue@3.5.24)
-      '@vueuse/core':
-        specifier: ^10.7.0
-        version: 10.11.1(vue@3.5.24)
-      axios:
-        specifier: ^1.6.2
-        version: 1.13.2
-      echarts:
-        specifier: ^5.4.3
-        version: 5.6.0
-      element-plus:
-        specifier: ^2.4.4
-        version: 2.11.8(vue@3.5.24)
-      pinia:
-        specifier: ^2.1.7
-        version: 2.3.1(typescript@5.9.3)(vue@3.5.24)
-      pinia-plugin-persistedstate:
-        specifier: ^3.2.1
-        version: 3.2.3(pinia@2.3.1)
-      vue:
-        specifier: ^3.3.11
-        version: 3.5.24(typescript@5.9.3)
-      vue-router:
-        specifier: ^4.2.5
-        version: 4.6.3(vue@3.5.24)
-    devDependencies:
-      '@vitejs/plugin-vue':
-        specifier: ^4.5.2
-        version: 4.6.2(vite@5.4.21)(vue@3.5.24)
-      unplugin-auto-import:
-        specifier: ^0.17.2
-        version: 0.17.8(@vueuse/core@10.11.1)
-      unplugin-element-plus:
-        specifier: ^0.8.0
-        version: 0.8.0
-      unplugin-vue-components:
-        specifier: ^0.26.0
-        version: 0.26.0(vue@3.5.24)
-      vite:
-        specifier: ^5.0.8
-        version: 5.4.21(@types/node@20.19.25)
-      vitest:
-        specifier: ^1.0.4
-        version: 1.6.1(@types/node@20.19.25)
-      vue-tsc:
-        specifier: ^2.0.29
-        version: 2.2.12(typescript@5.9.3)
-
-  apps/frontend:
-    dependencies:
-      axios:
-        specifier: ^1.6.5
-        version: 1.13.2
-      pinia:
-        specifier: ^2.1.7
-        version: 2.3.1(typescript@5.9.3)(vue@3.5.24)
-      pinia-plugin-persistedstate:
-        specifier: ^3.2.1
-        version: 3.2.3(pinia@2.3.1)
-      swiper:
-        specifier: ^11.0.5
-        version: 11.2.10
-      vue:
-        specifier: ^3.3.11
-        version: 3.5.24(typescript@5.9.3)
-      vue-router:
-        specifier: ^4.2.5
-        version: 4.6.3(vue@3.5.24)
-    devDependencies:
-      '@vitejs/plugin-vue':
-        specifier: ^4.5.2
-        version: 4.6.2(vite@5.4.21)(vue@3.5.24)
-      autoprefixer:
-        specifier: ^10.4.16
-        version: 10.4.22(postcss@8.5.6)
-      postcss:
-        specifier: ^8.4.32
-        version: 8.5.6
-      tailwindcss:
-        specifier: ^3.4.0
-        version: 3.4.18
-      unplugin-auto-import:
-        specifier: ^0.17.2
-        version: 0.17.8(@vueuse/core@10.11.1)
-      unplugin-vue-components:
-        specifier: ^0.26.0
-        version: 0.26.0(vue@3.5.24)
-      vite:
-        specifier: ^5.0.8
-        version: 5.4.21(@types/node@20.19.25)
-      vitest:
-        specifier: ^1.0.4
-        version: 1.6.1(@types/node@20.19.25)
-      vue-tsc:
-        specifier: ^2.0.29
-        version: 2.2.12(typescript@5.9.3)
-
   apps/server:
     dependencies:
       '@prisma/client':
@@ -181,6 +80,9 @@ importers:
       redis:
         specifier: ^4.6.11
         version: 4.7.1
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
     devDependencies:
       '@types/bcryptjs':
         specifier: ^2.4.6
@@ -203,9 +105,6 @@ importers:
       tsx:
         specifier: ^4.7.0
         version: 4.20.6
-      typescript:
-        specifier: ^5.3.3
-        version: 5.9.3
       vitest:
         specifier: ^1.0.4
         version: 1.6.1(@types/node@20.19.25)
